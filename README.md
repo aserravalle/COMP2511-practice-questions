@@ -44,7 +44,7 @@ Programming Practice Questions for Question 1
 
 ### Example 1 (Generics, 20T3 Final Exam)
 
-The Java package for this question is accessible via [this link](programmingexample1/src/programmingexample1).
+The Java package for this question is accessible via [this link](src/programmingexample1).
 
 The interface `Hamper<E>` is for hampers that can handle elements of a generic type E. A hamper is similar to a set but allows for duplicate elements. A "hamper" in real life is a basket of gifts full of lots of nice things, e.g. fruits, chocolates, toys, etc...
 
@@ -64,13 +64,13 @@ Note that, for your implementation of the `sum` method in `ArrayListItemHamper`,
 
 ### Example 2 (Generics, 20T2 Final Exam)
 
-The Java package for this question is accessible via [this link](programmingexample2/src/programmingexample2).
+The Java package for this question is accessible via [this link](src/programmingexample2).
 
 The interface `Bag<E>` is for bags that can handle elements of a generic type E. A bag is similar to a set but allows for duplicate elements. Complete all methods marked TODO in `ArrayListBag`. The class uses an `ArrayList` of `Count<E>` to track the count of each element. Pay careful attention to the contract and documentation in `Bag`, as well as the invariant in `ArrayListBag`, to make sure your implementation is correct. Make sure that your solution successfully passes the tests in `TestBag`.
 
 ### Example 3 (Pattern Implementation, 20T3 Final Exam)
 
-The Java package for this question is accessible via [this link](ProgrammingExample5/src/programmingexample5).
+The Java package for this question is accessible via [this link](src/programmingexample5).
 
 For a quick reference, the interfaces/classes from the package are listed below. Note that, most of them are partially implemented.
 
@@ -95,7 +95,7 @@ The tests in `ShapeVisitorTest` will guide you in completing these. You should e
 
 ### Example 4 (Pattern Implementation, 20T2 Final Exam)
 
-The Java package for this question is accessible via [this link](ProgrammingExample6/src/programmingexample6).
+The Java package for this question is accessible via [this link](src/programmingexample6).
 
 The class `Product` represents a product in an online store with a price and weight. The weight is used to calculate the shipping cost. Using the decorator pattern (as discussed in lectures):
 
@@ -112,7 +112,7 @@ Programming Practice Questions for Question 2 - Refactoring
 
 ### Example 5 (Refactoring, 20T2 Final Exam)
 
-The Java project containing code you'll need to modify for this question is accessible via [this link](ProgrammingExample7/src/programmingexample7).
+The Java project containing code you'll need to modify for this question is accessible via [this link](src/programmingexample7).
 
 Analyse the classes `Employee`, `Engineer`, `SalesMan` and `SalesHistory`. The source code in these classes suffer from various code smells. Applying suitable refactoring techniques, modify the Java source files to address each of the following code smells. You MUST include brief comments in your code to identify the smells and explain the refactoring techniques used.
 
