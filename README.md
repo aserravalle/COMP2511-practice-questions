@@ -70,7 +70,7 @@ The interface `Bag<E>` is for bags that can handle elements of a generic type E.
 
 ### Example 3 (Pattern Implementation, 20T3 Final Exam)
 
-The Java package for this question is accessible via [this link](src/programmingexample5).
+The Java package for this question is accessible via [this link](src/programmingexample3).
 
 For a quick reference, the interfaces/classes from the package are listed below. Note that, most of them are partially implemented.
 
@@ -95,7 +95,7 @@ The tests in `ShapeVisitorTest` will guide you in completing these. You should e
 
 ### Example 4 (Pattern Implementation, 20T2 Final Exam)
 
-The Java package for this question is accessible via [this link](src/programmingexample6).
+The Java package for this question is accessible via [this link](src/programmingexample4).
 
 The class `Product` represents a product in an online store with a price and weight. The weight is used to calculate the shipping cost. Using the decorator pattern (as discussed in lectures):
 
@@ -112,7 +112,7 @@ Programming Practice Questions for Question 2 - Refactoring
 
 ### Example 5 (Refactoring, 20T2 Final Exam)
 
-The Java project containing code you'll need to modify for this question is accessible via [this link](src/programmingexample7).
+The Java project containing code you'll need to modify for this question is accessible via [this link](src/programmingexample5).
 
 Analyse the classes `Employee`, `Engineer`, `SalesMan` and `SalesHistory`. The source code in these classes suffer from various code smells. Applying suitable refactoring techniques, modify the Java source files to address each of the following code smells. You MUST include brief comments in your code to identify the smells and explain the refactoring techniques used.
 
