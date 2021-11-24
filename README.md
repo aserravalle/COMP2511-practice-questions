@@ -44,7 +44,7 @@ Programming Practice Questions for Question 1
 
 ### Example 1 (Generics, 20T3 Final Exam)
 
-The Java package for this question is accessible via [this link](ProgrammingExample3/src/programmingexample3).
+The Java package for this question is accessible via [this link](programmingexample1/src/programmingexample1).
 
 The interface `Hamper<E>` is for hampers that can handle elements of a generic type E. A hamper is similar to a set but allows for duplicate elements. A "hamper" in real life is a basket of gifts full of lots of nice things, e.g. fruits, chocolates, toys, etc...
 
@@ -64,7 +64,7 @@ Note that, for your implementation of the `sum` method in `ArrayListItemHamper`,
 
 ### Example 2 (Generics, 20T2 Final Exam)
 
-The Java package for this question is accessible via [this link](ProgrammingExample4/src/programmingexample4).
+The Java package for this question is accessible via [this link](programmingexample2/src/programmingexample2).
 
 The interface `Bag<E>` is for bags that can handle elements of a generic type E. A bag is similar to a set but allows for duplicate elements. Complete all methods marked TODO in `ArrayListBag`. The class uses an `ArrayList` of `Count<E>` to track the count of each element. Pay careful attention to the contract and documentation in `Bag`, as well as the invariant in `ArrayListBag`, to make sure your implementation is correct. Make sure that your solution successfully passes the tests in `TestBag`.
 
