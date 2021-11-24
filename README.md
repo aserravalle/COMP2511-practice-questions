@@ -1,6 +1,6 @@
 # Sample Exam Quetions
 
-The following questions are practice questions. They may not be representative of the style or difficulty of the questions in the exam. There may be questions in the Final Exam of a different style and structure to these examples. To get a better idea of the structure/style of questions in the exam, please refer to the [Sample Exam](https://www.cse.unsw.edu.au/~cs2511/21T3/SampleExam/) and the [Final Exam Structure](https://webcms3.cse.unsw.edu.au/COMP2511/21T3/resources/69283)
+The following questions are practice questions. They may not be representative of the style or difficulty of the questions in the exam. There may be questions in the Final Exam of a different style and structure to these examples. To get a better idea of the structure/style of questions in the exam, please refer to the [Sample Exam](https://www.cse.unsw.edu.au/~cs2511/21T3/FinalExam/) and the [Final Exam Structure](https://webcms3.cse.unsw.edu.au/COMP2511/21T3/resources/69283)
 
 * * * * *
 
