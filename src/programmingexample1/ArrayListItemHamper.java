@@ -52,7 +52,11 @@ public class ArrayListItemHamper<E extends Item> implements Hamper<E> {
 
     @Override
     public void remove(E e, int n) {
-        // TODO implement this
+        Count<E> count = getCount(e);
+        count.decrementCount(n);
+        if (count.getCount() <= 0) {
+            counts.remove(count);
+        }
     }
 
     @Override
@@ -65,14 +69,27 @@ public class ArrayListItemHamper<E extends Item> implements Hamper<E> {
 
     @Override
     public int size() {
-        // TODO implement this
-        return 0;
+        int size = 0;
+        for (Count<E> c : counts) {
+            size += c.getCount();
+        }
+        return size;
     }
 
     @Override
     public Hamper<E> sum(Hamper<? extends E> hamper) {
-        // TODO implement this
-        return null;
+        ArrayListItemHamper<E> new_hamper = new ArrayListItemHamper<>();
+        new_hamper.addAll(this);
+        new_hamper.addAll(hamper);
+        return new_hamper;
+    }
+
+    void addAll(Hamper<? extends E> hamper) {
+        for (Count<? extends E> count : hamper) {
+            this.add(
+                count.getElement(), count.getCount()
+            );
+        }
     }
 
     @Override
@@ -89,7 +106,47 @@ public class ArrayListItemHamper<E extends Item> implements Hamper<E> {
     @Override
     public boolean equals(Object o) {
         // TODO implement this
-        return false;
+        // Check if both refer to the same object
+        if (this  == o) {
+            return true;
+        }
+        // Check other is not null
+        if ( o == null) {
+            return false;
+        }
+
+        // Check hampers of same class, if not return false
+        if(!this.getClass().equals(o.getClass())) {
+            return false;
+        }
+        // Cast other to a hamper of same time
+        ArrayListItemHamper<?> other = (ArrayListItemHamper<?>) o;
+
+        // Check both hampers have same number of items
+        if (size() != other.size()){
+            return false;
+        }
+
+        // Check the number of each element matches between both hampers
+        var hamperIter = other.iterator();
+        while(hamperIter.hasNext()) {
+            var cOther = hamperIter.next();
+            // Check if the number of this element matches in the other
+            boolean matchFound = false;
+            for (Count<E> cThis : counts) {
+                // If element are equal and count are equal, then a match is found
+                if(cThis.getElement().equals(cOther.getElement()) && cThis.getCount() == cOther.getCount()) {
+                    matchFound = true;
+                }
+            }
+            // If a match wasnt found then not equal and return false
+            if (!matchFound) {
+                return false;
+            }
+        }
+        // If made it to here every check was passed so return true
+        return true;
+
     }
 
     /**
@@ -98,8 +155,12 @@ public class ArrayListItemHamper<E extends Item> implements Hamper<E> {
 	 */
 	@Override
     public int getPrice() {
-        // TODO implement this
-        return 0;
+        int sum = 0;
+        for (Count<E> count : counts) {
+            Item item = count.getElement();
+            sum += item.getPrice() * count.getCount();
+        }
+        return sum;
     }
 
     @Override
