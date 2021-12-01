@@ -52,7 +52,11 @@ public class ArrayListBag<E> implements Bag<E> {
 
     @Override
     public void remove(E e, int n) {
-        // TODO Implement this
+        Count<E> count = getCount(e);
+        count.decrementCount(n);
+        if (count.getCount() <= 0) {
+            counts.remove(count);
+        }
     }
 
     @Override
@@ -65,14 +69,27 @@ public class ArrayListBag<E> implements Bag<E> {
 
     @Override
     public int size() {
-        // TODO Implement this
-        return 0;
+        int size = 0;
+        for (Count<E> c : counts) {
+            size += c.getCount();
+        }
+        return size;
     }
 
     @Override
     public Bag<E> sum(Bag<? extends E> bag) {
-        // TODO Implement this
-        return null;
+        ArrayListBag<E> new_bag = new ArrayListBag<>();
+        new_bag.addAll(this);
+        new_bag.addAll(bag);
+        return new_bag;
+    }
+
+    private void addAll(Bag<? extends E> bag) {
+        for (Count<? extends E> count : bag) {
+            this.add(
+                count.getElement(), count.getCount()
+            );
+        }
     }
 
     @Override
@@ -89,7 +106,29 @@ public class ArrayListBag<E> implements Bag<E> {
      */
     @Override
     public boolean equals(Object o) {
-        // TODO Implement this
-        return false;
+        if (o == this) {return true;}
+        if (o == null) {return false;}
+        if (!this.getClass().equals(o.getClass())) {return false;}
+        ArrayListBag<?> c = (ArrayListBag<?>)o;
+        return hasSameItems(c);
+    }
+
+    private boolean hasSameItems(ArrayListBag<?> other) {
+        if (size() != other.size()){return false;}
+
+        var itr = other.iterator();
+        while(itr.hasNext()) {
+            var cOther = itr.next();
+            boolean matchFound = false;
+            for (Count<E> cThis : counts) {
+                if(cThis.getElement().equals(cOther.getElement()) && cThis.getCount() == cOther.getCount()) {
+                    matchFound = true;
+                }
+            }
+            if (!matchFound) {
+                return false;
+            }
+        }
+        return true;
     }
 }

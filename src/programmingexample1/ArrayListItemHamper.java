@@ -105,7 +105,6 @@ public class ArrayListItemHamper<E extends Item> implements Hamper<E> {
      */
     @Override
     public boolean equals(Object o) {
-        // TODO implement this
         // Check if both refer to the same object
         if (this  == o) {
             return true;
