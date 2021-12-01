@@ -1,12 +1,20 @@
 package programmingexample3;
 
+import java.awt.Color;
+
 public class ShapeColourVisitor implements ShapeVisitor {
+    @Override
+    public void visitCircle(Circle circle) {
+        circle.setColour(Color.red);
+    }
 
-    /*
-     *
-     * TODO In this class, you need to implement the required method(s), to
-     * answer the question.
-     *
-     */
+    @Override
+    public void visitRectangle(Rectangle rectangle) {
+        rectangle.setColour(Color.green);
+    }
 
+    @Override
+    public void visitTriangle(Triangle triangle) {
+        triangle.setColour(Color.blue);
+    }
 }

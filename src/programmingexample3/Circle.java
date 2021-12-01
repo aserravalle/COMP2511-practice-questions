@@ -24,11 +24,7 @@ public class Circle extends Shape implements ShapeVisitable {
 
     @Override
     public void accept(ShapeVisitor v) {
-
-        /*
-         * TODO You need to implement this method, to answer the question.
-         */
-
+        v.visitCircle(this);
     }
 
 }

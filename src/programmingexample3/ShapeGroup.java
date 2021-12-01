@@ -1,5 +1,6 @@
 package programmingexample3;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 public class ShapeGroup implements ShapeVisitable {
@@ -20,11 +21,8 @@ public class ShapeGroup implements ShapeVisitable {
 
     @Override
     public void accept(ShapeVisitor v) {
-
-        /*
-         * TODO You need to implement this method, to answer the question.
-         */
-
+        for (ShapeVisitable shape : elems) {
+            shape.accept(v);
+        }
     }
-
 }

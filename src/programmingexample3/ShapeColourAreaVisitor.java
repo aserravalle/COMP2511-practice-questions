@@ -3,24 +3,36 @@ package programmingexample3;
 import java.awt.Color;
 
 public class ShapeColourAreaVisitor implements ShapeVisitor {
-
-    /*
-     *
-     * TODO In this class, you need to implement the required method(s), to
-     * answer the question.
-     *
-     * You also need to implement the following constructor and declare
-     * variables, if required.
-     *
-     */
+    private Color colour;
+    private double totalArea;
 
     public ShapeColourAreaVisitor(Color colour) {
-
+        this.colour = colour;
     }
 
     public double getTotalArea() {
-        // TODO Implement this method as well
-        return 0;
+        return totalArea;
     }
 
+    @Override
+    public void visitCircle(Circle circle) {
+        if (circle.getColour().equals(this.colour)) {
+            totalArea += circle.area();
+        }
+        
+    }
+
+    @Override
+    public void visitRectangle(Rectangle rectangle) {
+        if (rectangle.getColour().equals(this.colour)) {
+            totalArea += rectangle.area();
+        }
+    }
+
+    @Override
+    public void visitTriangle(Triangle triangle) {
+        if (triangle.getColour().equals(this.colour)) {
+            totalArea += triangle.area();
+        }
+    }
 }

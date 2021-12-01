@@ -1,11 +1,7 @@
 package programmingexample3;
 
 public interface ShapeVisitor {
-
-	/*
-	 * TODO Here, you need to add the required method signatures(s),
-	 * to answer the question.
-	 *
-	 */
-
+	void visitCircle(Circle circle);
+    void visitRectangle(Rectangle rectangle);
+    void visitTriangle(Triangle triangle);
 }
